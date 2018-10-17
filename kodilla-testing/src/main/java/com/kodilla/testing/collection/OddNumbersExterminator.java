@@ -10,14 +10,15 @@ public class OddNumbersExterminator {
         numbers = new ArrayList<Integer>();
     }
 
-    public void exterminate(ArrayList<Integer> numbers) {
+    ArrayList<Integer> oddList = new ArrayList<Integer>();
 
-        ArrayList<Integer> oddList = new ArrayList<Integer>();
+    public ArrayList<Integer> exterminate(ArrayList<Integer> numbers) {
 
         for(int n = 0; n < numbers.size(); n++) {
             if (numbers.get(n) % 2 == 0) {
                 oddList.add(n);
             }
         }
+        return oddList;
     }
 }

@@ -17,20 +17,22 @@ public class CollectionTestSuite {
     @Test
     public void testOddNumbersExterminatorEmptyList() {
         //Given
-       OddNumbersExterminator test1 = new OddNumbersExterminator();
+       OddNumbersExterminator testEmptyList = new OddNumbersExterminator();
         //When
-
+        ArrayList<Integer> resultEmptyList = testEmptyList.oddList;
+        System.out.println("Testing " + resultEmptyList);
         //Then
-        Assert.assertTrue(test1.numbers.isEmpty() == true);
+        Assert.assertTrue(testEmptyList.oddList.isEmpty() == true);
     }
 
     @Test
     public void testOddNumbersExterminatorNormalList() {
         //Given
-        OddNumbersExterminator test2 = new OddNumbersExterminator();
+        OddNumbersExterminator testNormalList = new OddNumbersExterminator();
         //When
-        ArrayList<Integer> result = test2.numbers;
+        ArrayList<Integer> resultNormalList = testNormalList.numbers;
+        System.out.println("Testing " + resultNormalList);
         //Then
-        Assert.assertEquals(test2.numbers, result);
+        Assert.assertEquals(testNormalList.numbers, resultNormalList);
     }
 }
