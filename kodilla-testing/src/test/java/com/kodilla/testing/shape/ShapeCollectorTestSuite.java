@@ -22,50 +22,48 @@ public class ShapeCollectorTestSuite {
     }
 
     @Test
-    public void testAddShape() {
+    public void testShouldAddShapeToShapeList() {
         //Given
         Circle circle = new Circle("Circle", 7.8);
         Triangle triangle = new Triangle("Triangle", 10.4, 5.9);
         Square square = new Square("Square", 8.96);
         ShapeCollector shapeCollector = new ShapeCollector();
-        shapeCollector.shapeList.add(0, circle);
-        shapeCollector.shapeList.add(1, triangle);
-        shapeCollector.shapeList.add(2, square);
+
         //When
-        Shape result = shapeCollector.addShape(circle);
+        shapeCollector.addShape(circle);
         //Then
-        Assert.assertEquals(shapeCollector.shapeList.get(0), result);
+        Assert.assertEquals(true, shapeCollector.shapeList.contains(circle));
     }
 
     @Test
-    public void testRemoveShape() {
+    public void testShouldRemoveShapeFromShapeList() {
         //Given
         Circle circle = new Circle("Circle", 7.8);
         Triangle triangle = new Triangle("Triangle", 10.4, 5.9);
         Square square = new Square("Square", 8.96);
         ShapeCollector shapeCollector = new ShapeCollector();
-        shapeCollector.shapeList.add(0, circle);
-        shapeCollector.shapeList.add(1, triangle);
-        shapeCollector.shapeList.add(2, square);
+        shapeCollector.shapeList.add(circle);
+
         //When
-        Shape result = shapeCollector.removeShape(circle);
+        shapeCollector.removeShape(circle);
+
         //Then
-        Assert.assertEquals(shapeCollector.shapeList.get(0), result);
+        Assert.assertFalse(shapeCollector.shapeList.contains(circle));
     }
 
     @Test
-    public void testGetShape() {
+    public void testShouldGetShapeFromShapeList() {
         //Given
         Circle circle = new Circle("Circle", 7.8);
         Triangle triangle = new Triangle("Triangle", 10.4, 5.9);
         Square square = new Square("Square", 8.96);
         ShapeCollector shapeCollector = new ShapeCollector();
-        shapeCollector.shapeList.add(0, circle);
-        shapeCollector.shapeList.add(1, triangle);
-        shapeCollector.shapeList.add(2, square);
+        shapeCollector.addShape(circle);
+
         //When
-        Shape result = shapeCollector.getShape();
+        Shape result = shapeCollector.getShape(circle);
+
         //Then
-        Assert.assertEquals(shapeCollector.shapeList.get(0), result);
+        Assert.assertEquals(circle, result);
     }
 }

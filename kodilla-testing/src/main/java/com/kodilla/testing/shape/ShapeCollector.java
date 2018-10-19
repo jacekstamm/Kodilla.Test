@@ -11,15 +11,13 @@ public class ShapeCollector{
 
     ArrayList<Shape> shapeList = new ArrayList<Shape>();
 
-    public Shape addShape(Shape shape) {
-        return null;
+    public void addShape(Shape shape) {
     }
 
-    public Shape removeShape(Shape shape) {
-        return null;
+    public void removeShape(Shape shape) {
     }
 
-    public Shape getShape() {
+    public Shape getShape(Shape shape) {
         return null;
     }
 
