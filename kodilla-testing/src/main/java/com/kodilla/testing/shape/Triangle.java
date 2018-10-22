@@ -22,6 +22,11 @@ class Triangle implements Shape {
     }
 
     @Override
+    public String toString() {
+        return  name + " with base: " + baseOfTheTriangle + " and height: " + heightOfTheTriangle + "\n" + "Got field: " + getField();
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;

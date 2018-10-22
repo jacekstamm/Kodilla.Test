@@ -15,7 +15,7 @@
 *.iws
 *.iml
 *.ipr
-/out/
+kodilla-testing/out/
 /build/
 
 

@@ -32,7 +32,7 @@ public class ShapeCollectorTestSuite {
         //When
         shapeCollector.addShape(circle);
         //Then
-        Assert.assertEquals(true, shapeCollector.shapeList.contains(circle));
+        Assert.assertTrue(shapeCollector.shapeList.contains(circle));
     }
 
     @Test
