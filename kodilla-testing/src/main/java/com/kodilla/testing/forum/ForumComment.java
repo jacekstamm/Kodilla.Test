@@ -13,10 +13,6 @@ public class ForumComment {
         this.author = author;
     }
 
-    public ForumPost getForumPost() {
-        return forumPost;
-    }
-
     public String getCommentBody() {
         return commentBody;
     }

@@ -30,7 +30,7 @@ public class ShapeCollectorTestSuite {
         ShapeCollector shapeCollector = new ShapeCollector();
 
         //When
-        shapeCollector.addShape(circle);
+        shapeCollector.addShape(0, circle);
         //Then
         Assert.assertTrue(shapeCollector.shapeList.contains(circle));
     }
@@ -58,10 +58,10 @@ public class ShapeCollectorTestSuite {
         Triangle triangle = new Triangle("Triangle", 10.4, 5.9);
         Square square = new Square("Square", 8.96);
         ShapeCollector shapeCollector = new ShapeCollector();
-        shapeCollector.addShape(circle);
+        shapeCollector.addShape(0, circle);
 
         //When
-        Shape result = shapeCollector.getShape(circle);
+        Shape result = shapeCollector.getShape(0);
 
         //Then
         Assert.assertEquals(circle, result);
