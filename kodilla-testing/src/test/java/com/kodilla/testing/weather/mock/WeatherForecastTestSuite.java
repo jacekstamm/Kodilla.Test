@@ -24,7 +24,7 @@ public class WeatherForecastTestSuite {
 
         WeatherForecast weatherForecast = new WeatherForecast(temperaturesMock);
 
-        //When
+        //Whens
         int quantityOfSensors = weatherForecast.calculateForecast().size();
 
         //Then

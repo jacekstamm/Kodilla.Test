@@ -5,5 +5,5 @@ import java.util.*;
 public interface Statistic {
     List<String> userNames();
     int postsCount();
-    int comentsCount();
+    int commentsCount();
 }
