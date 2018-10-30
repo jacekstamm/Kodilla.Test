@@ -3,6 +3,7 @@ package com.kodilla.testing.library;
 import org.junit.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
@@ -106,15 +107,15 @@ public class BookDirectoryTestSuite {
         BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
         LibraryUser user = new LibraryUser("Adam", "Kowalski", "987909765");
         Book book1 = new Book("Secrets of Alamo", "John Smith", 2008);
-        List<Book> borrowedBookList = new ArrayList<>();
-        when(libraryDatabaseMock.listBooksInHandsOf(user)).thenReturn(borrowedBookList);
+        List<Book> borrowedBookListUser = new ArrayList<>();
+        borrowedBookListUser.add(book1);
+        when(libraryDatabaseMock.listBooksInHandsOf(user)).thenReturn(borrowedBookListUser);
 
         //When
         List<Book> theBorrowedList = bookLibrary.listBooksInHandsOf(user);
 
         //Then
         assertEquals(1, theBorrowedList.size());
-
     }
 
     @Test
@@ -130,6 +131,6 @@ public class BookDirectoryTestSuite {
         List<Book> theBorrowedList = bookLibrary.listBooksInHandsOf(user);
 
         //Then
-        assertEquals(5, theBorrowedList);
+        assertEquals(5, theBorrowedList.size());
     }
 }
