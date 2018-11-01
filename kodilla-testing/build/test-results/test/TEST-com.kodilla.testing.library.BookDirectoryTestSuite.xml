@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kodilla.testing.library.BookDirectoryTestSuite" tests="6" skipped="0" failures="0" errors="0" timestamp="2018-10-30T16:23:42" hostname="MacBook-Pro-Jacek.local" time="0.302">
+  <properties/>
+  <testcase name="testShouldCheck5BooksBorrowedStatus" classname="com.kodilla.testing.library.BookDirectoryTestSuite" time="0.296"/>
+  <testcase name="testListBooksWithConditionFragmentShorterThan3" classname="com.kodilla.testing.library.BookDirectoryTestSuite" time="0.004"/>
+  <testcase name="testShouldCheck1BookBorrowedStatus" classname="com.kodilla.testing.library.BookDirectoryTestSuite" time="0.0"/>
+  <testcase name="testListBooksWithConditionMoreThan20" classname="com.kodilla.testing.library.BookDirectoryTestSuite" time="0.001"/>
+  <testcase name="testListBooksWithConditionsReturnList" classname="com.kodilla.testing.library.BookDirectoryTestSuite" time="0.0"/>
+  <testcase name="testShouldCheck0BookBorrowedStatus" classname="com.kodilla.testing.library.BookDirectoryTestSuite" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
