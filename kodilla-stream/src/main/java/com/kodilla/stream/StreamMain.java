@@ -1,35 +1,33 @@
 package com.kodilla.stream;
 
-import com.kodilla.stream.beautifier.PoemBeautifier;
-import com.kodilla.stream.beautifier.PoemDecorator;
-import com.kodilla.stream.iterate.NumbersGenerator;
-import com.kodilla.stream.lambda.Executor;
-import com.kodilla.stream.lambda.ExpressionExecutor;
-import com.kodilla.stream.lambda.Processor;
+import com.kodilla.stream.book.Book;
+import com.kodilla.stream.book.BookDirectory;
+import com.kodilla.stream.forumuser.Forum;
+import com.kodilla.stream.forumuser.ForumUser;
+
+import java.time.LocalDate;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class StreamMain {
-
     public static void main(String[] args) {
-        Processor processor = new Processor();
-        processor.execute(() -> System.out.println("Ble ble..."));
+        Forum theForum = new Forum();
 
-        ExpressionExecutor expressionExecutor = new ExpressionExecutor();
+        Map<Integer, ForumUser> theForumUserMapStream = theForum.getUserList().stream()
+                .filter(forumUser -> forumUser.getForumUserSex() == 'M')
+                .filter(forumUser -> forumUser.getForumUserDateOfBirth().isBefore(LocalDate.of(1998,11,5)))
+                .filter(forumUser -> forumUser.getForumUserQuantityOfPosts() > 1)
+                .collect(Collectors.toMap(ForumUser::getForumUserID, forumUser -> forumUser));
 
-        System.out.println("Calculating expressions with lambdas");
-        expressionExecutor.executeExpression(10, 5, (a, b) -> a + b);
-        expressionExecutor.executeExpression(10, 5, (a, b) -> a - b);
-        expressionExecutor.executeExpression(10, 5, (a, b) -> a * b);
-        expressionExecutor.executeExpression(10, 5, (a, b) -> a / b);
+        System.out.println("Liczba użytkowników spełniających wymagania: " + theForumUserMapStream.size());
+        theForumUserMapStream.entrySet().stream()
+                .map(entry -> entry.getKey() + ": " + entry.getValue())
+                .forEach(System.out::println);
 
-        System.out.println("Zadanie 7.1");
-        PoemBeautifier poemBeautifier = new PoemBeautifier();
-        poemBeautifier.beautify("Giełda Słów", text -> "ABC " + text + " ABC");
-        poemBeautifier.beautify("Litwo Ojczyzno Moja! ", text -> text + text.toUpperCase());
-        poemBeautifier.beautify("Zasady wywierania wpływu na ludzi", text -> text.toLowerCase());
-        poemBeautifier.beautify("Przeszkoda czy wyzwanie?", text -> "Tytuł: " + text + " Rok wydania: 2016");
-        poemBeautifier.beautify("Jazda! ", text -> text + text + text + text.toUpperCase());
 
-        System.out.println("Using Stream to generate even nubers from 1 to 20");
-        NumbersGenerator.generateEven(20);
+
+
+
     }
 }
