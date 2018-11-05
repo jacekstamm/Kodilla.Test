@@ -39,7 +39,7 @@ public final class ForumUser {
 
     @Override
     public String toString() {
-        return "Username: " + forumUserName + ", sex: " + forumUserSex + ", date of birth: " + forumUserDateOfBirth
-                + ", this forum user got " + forumUserQuantityOfPosts + " publicated posts.";
+        return "Username: <<" + forumUserName + ">>, sex: <<" + forumUserSex + ">>, date of birth: <<" + forumUserDateOfBirth
+                + ">>, this forum user got " + forumUserQuantityOfPosts + " publicated posts.";
     }
 }
