@@ -14,6 +14,11 @@ public class WorldTestSuite {
         Continent northAmerica = new Continent("North America", new ArrayList<>());
         World world = new World();
 
+        world.addContinentToWorld(europe);
+        world.addContinentToWorld(asia);
+        world.addContinentToWorld(africa);
+        world.addContinentToWorld(northAmerica);
+
         europe.addCountryToContinent(new Country("Poland", new BigDecimal("38476269")));
         europe.addCountryToContinent(new Country("Germany", new BigDecimal("80594017")));
         europe.addCountryToContinent(new Country("Italy", new BigDecimal("60589445")));
@@ -36,8 +41,9 @@ public class WorldTestSuite {
         //When
         BigDecimal result = world.getPeopleQuantity();
 
-        System.out.println(result);
         //Then
+        BigDecimal expectedPopulation = new BigDecimal("3987895796");
+        Assert.assertEquals(expectedPopulation, result);
 
 
 
