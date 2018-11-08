@@ -2,6 +2,8 @@ package com.kodilla.stream.array;
 
 import org.junit.*;
 
+import java.math.BigDecimal;
+
 
 public class ArrayOperationsTestSuite {
     @Test
@@ -31,7 +33,6 @@ public class ArrayOperationsTestSuite {
 
         //When
         ArrayOperations.getAverage(numbersTest);
-        //87.7 = result
         //Then
 
 
