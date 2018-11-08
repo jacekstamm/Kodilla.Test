@@ -2,9 +2,6 @@ package com.kodilla.stream.array;
 
 import org.junit.*;
 
-import java.math.BigDecimal;
-
-
 public class ArrayOperationsTestSuite {
     @Test
     public void testGetAverage() {
@@ -32,9 +29,8 @@ public class ArrayOperationsTestSuite {
         numbersTest[19] = 100;
 
         //When
-        ArrayOperations.getAverage(numbersTest);
+        double result = ArrayOperations.getAverage(numbersTest);
         //Then
-
-
+        Assert.assertEquals(87.7, result,0.0);
     }
 }
