@@ -39,7 +39,7 @@ public class ForumUserTestSuite {
 
         //Then
         Assert.assertEquals("{1=Username: <<Bogurodzica>>, sex: <<M>>, date of birth: <<1987-12-21>>, this forum user got 120 publicated posts., 2=Username: <<JacS123>>, sex: <<M>>, date of birth: <<1991-09-29>>, this forum user got 19 publicated posts., 10=Username: <<Brzetysław>>, sex: <<M>>, date of birth: <<1990-01-02>>, this forum user got 381 publicated posts.}", resultTest.toString());
-
+        //Trzy aserty które sprawdzają wszystkie przypadki.
     }
 
     @Test
