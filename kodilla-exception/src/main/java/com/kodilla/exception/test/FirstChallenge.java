@@ -4,13 +4,7 @@ public class FirstChallenge {
 
     public double divide(double a, double b) throws ArithmeticException {
         if(b == 0) {
-            try{
-
-            } catch (ArithmeticException x) {
-                System.out.print("Something went WRONG! Error: " + x);
-            } finally {
-                System.out.println("Nie dziel przez 0! Zmień b!");
-            }
+            throw new ArithmeticException();
         }
         return a / b;
     }
@@ -19,8 +13,13 @@ public class FirstChallenge {
 
         FirstChallenge firstChallenge = new FirstChallenge();
 
-        double result = firstChallenge.divide(3, 0);
-
-        System.out.println(result);
+        try {
+            double result = firstChallenge.divide(3, 0);
+            System.out.println(result);
+        } catch (ArithmeticException x) {
+            System.out.println("Error: " + x);
+        } finally {
+            System.out.println("Divided by 0! Change b");
+        }
     }
 }
