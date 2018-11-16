@@ -6,7 +6,9 @@ import java.util.Map;
 
 public class FlightFinder {
 
-    public void findFlight(Flight flight) throws RouteNotFoundException {
+    public boolean findFlight(Flight flight) throws RouteNotFoundException {
+
+
         Map<String, Boolean> flightMap = new HashMap<>();
 
         flightMap.put("Poznan", false);
@@ -15,14 +17,18 @@ public class FlightFinder {
         flightMap.put("Paris", false);
         flightMap.put("London", true);
         flightMap.put("Barcelona", false);
+        flightMap.put("Madrit", true);
+        flightMap.put("Moscow", false);
 
-        if(flightMap.containsKey(flight.getDepartureAirport()) && flightMap.containsKey(flight.getArrivalAirport()) && ) {
+        boolean confirmationFlights = flightMap.containsKey(flight.getDepartureAirport()) && flightMap.containsKey(flight.getArrivalAirport());
+
+        if()) {
             System.out.println("There is connection: " + flight.getDepartureAirport() + " to: " + flight.getArrivalAirport());
         } else {
             throw new RouteNotFoundException();
         }
 
-
+        return confirmationFlights;
 
     }
 }
