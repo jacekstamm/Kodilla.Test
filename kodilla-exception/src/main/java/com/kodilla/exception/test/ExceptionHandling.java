@@ -6,9 +6,9 @@ public class ExceptionHandling {
 
         SecondChallenge secondChallenge = new SecondChallenge();
         try {
-            secondChallenge.probablyIWillThrowException(1.5, 1.5);
+            secondChallenge.probablyIWillThrowException(2.0, 1.5);
         } catch (Exception e) {
-            System.out.print("uos!");
+            System.out.print("ERROR: " + e);
         }
     }
 }
