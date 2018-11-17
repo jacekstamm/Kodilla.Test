@@ -22,7 +22,7 @@ public class FlightFinder {
 
         boolean confirmationFlights = flightMap.containsKey(flight.getDepartureAirport()) && flightMap.containsKey(flight.getArrivalAirport());
 
-        if()) {
+        if(confirmationFlights) {
             System.out.println("There is connection: " + flight.getDepartureAirport() + " to: " + flight.getArrivalAirport());
         } else {
             throw new RouteNotFoundException();
