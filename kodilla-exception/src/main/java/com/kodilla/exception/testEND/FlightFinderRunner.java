@@ -6,7 +6,7 @@ public class FlightFinderRunner {
         FlightFinder flightFinder = new FlightFinder();
 
         try {
-            flightFinder.findFlight(new Flight("Warsaw", "Berlin"));
+            flightFinder.findFlight(new Flight("Warsaw", "Poznan"));
         } catch (RouteNotFoundException e) {
             System.out.println("There is no connection between these airports! Please change destinations.");
         }
