@@ -17,15 +17,16 @@ public class ChallengesTestSuite {
     }
 
     @Test
-    public void testShouldCheckNumberOfTitles() {
+    public void testShouldCheckStringsOfTitles() {
         //Given
         MovieStore movieStore = new MovieStore();
         //When
-        int result = movieStore.getMovies().entrySet().stream()
+        String movieList = movieStore.getMovies().entrySet().stream()
                 .flatMap(n -> n.getValue().stream())
-                .collect(Collectors.toList())
-                .size();
+                .map(n -> n + " ! ")
+                .collect(Collectors.joining());
         //Then
-        Assert.assertEquals(result, 6);
+        String expectedString = "Żelazny Człowiek ! Iron Man ! Mściciele ! Avengers ! Błyskawica ! Flash ! ";
+        Assert.assertEquals(movieList, expectedString);
     }
 }
