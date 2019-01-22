@@ -7,7 +7,8 @@ public class Main {
 
         MovieStore movieStore = new MovieStore();
         movieStore.getMovies().entrySet().stream()
-                .map(n -> n.getValue().toString() + " ! ")
+                .flatMap(n -> n.getValue().stream())
+                .map(n -> n + " ! ")
                 .forEach(System.out::print);
     }
 }
