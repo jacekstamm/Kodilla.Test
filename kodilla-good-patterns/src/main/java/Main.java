@@ -1,14 +1,15 @@
-import com.kodilla.good.patterns.challenges.MovieStore;
-
+import com.kodilla.good.patterns.challenges.Allegro.OrderRequest;
+import com.kodilla.good.patterns.challenges.Allegro.OrderRequestRetriever;
+import com.kodilla.good.patterns.challenges.Allegro.ProductOrderService;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        MovieStore movieStore = new MovieStore();
-        movieStore.getMovies().entrySet().stream()
-                .flatMap(n -> n.getValue().stream())
-                .map(n -> n + " ! ")
-                .forEach(System.out::print);
+        OrderRequestRetriever orderRequestRetriever = new OrderRequestRetriever();
+        OrderRequest orderRequest = orderRequestRetriever.retrieve();
+
+        ProductOrderService productOrderService = new ProductOrderService();
+        productOrderService.process(orderRequest);
     }
 }
