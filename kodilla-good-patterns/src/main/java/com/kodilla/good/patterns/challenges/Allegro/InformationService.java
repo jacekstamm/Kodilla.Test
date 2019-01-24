@@ -2,5 +2,7 @@ package com.kodilla.good.patterns.challenges.Allegro;
 
 public interface InformationService {
 
-    void inform(User user);
+    default void inform(User user) {
+        System.out.println("Sending message to: " + user);
+    }
 }
