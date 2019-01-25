@@ -6,9 +6,9 @@ public class OrderRequestRetriever {
 
     public OrderRequest retrieve() {
 
-        User user = new User("Jacek", "Stamm");
+        User userJacekStamm = new User("Jacek", "Stamm");
         LocalDate orderDate = LocalDate.of(2019, 1, 22);
 
-        return new OrderRequest(user, orderDate);
+        return new OrderRequest(userJacekStamm, orderDate);
     }
 }
