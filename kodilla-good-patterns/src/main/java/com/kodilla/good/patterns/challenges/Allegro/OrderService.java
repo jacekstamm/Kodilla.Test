@@ -1,11 +1,9 @@
 package com.kodilla.good.patterns.challenges.Allegro;
 
 import java.time.LocalDate;
+import java.util.Map;
 
 public interface OrderService {
 
-    default boolean order(User user, LocalDate orderDate) {
-        System.out.println("Create order for client: " + user + ". Date of order: " + orderDate + ".");
-        return false;
-    }
+    boolean order(Item item, User user);
 }

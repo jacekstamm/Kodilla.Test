@@ -7,8 +7,10 @@ public class Main {
         OrderRequestRetriever orderRequestRetriever = new OrderRequestRetriever();
         OrderRequest orderRequest = orderRequestRetriever.retrieve();
 
-        Stock stock = new Stock();
-        stock.stockItemList();
+        ProductOrderService productOrderService = new ProductOrderService(new MailService(), new OrderItemsService(), new OrderItemsRepository());
+        productOrderService.process(orderRequest);
+
+        System.out.println(orderRequest);
 
 
 

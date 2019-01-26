@@ -1,21 +1,18 @@
 package com.kodilla.good.patterns.challenges.Allegro;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Stock {
 
-    public ArrayList<Item> itemList;
 
     public Stock() {
-        itemList = new ArrayList<>();
+        stockItemList();
     }
 
     public Map stockItemList() {
 
         ReferenceNumberRandom referenceNumberRandom = new ReferenceNumberRandom();
-
 
         Map<Long, Item> stockItemMap = new HashMap<>();
         stockItemMap.put(referenceNumberRandom.referenceNumberGenerator(), new Item("Apple", 1.98));
@@ -26,6 +23,7 @@ public class Stock {
         stockItemMap.put(referenceNumberRandom.referenceNumberGenerator(), new Item("Pencil", 0.97));
         stockItemMap.put(referenceNumberRandom.referenceNumberGenerator(), new Item("Coca-Cola", 3.19));
         stockItemMap.put(referenceNumberRandom.referenceNumberGenerator(), new Item("Pepsi", 3.29));
+        stockItemMap.put(referenceNumberRandom.referenceNumberGenerator(), new Item("Snowboard", 799.99));
 
         System.out.println("Full Item List:");
         stockItemMap.entrySet().stream()

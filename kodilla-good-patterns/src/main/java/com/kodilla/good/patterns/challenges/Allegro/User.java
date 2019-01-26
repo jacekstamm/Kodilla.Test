@@ -10,6 +10,11 @@ public class User {
         this.surname = surname;
     }
 
+    @Override
+    public String toString() {
+        return "Customer " + name + " " + surname;
+    }
+
     public String getName() {
         return name;
     }

@@ -22,7 +22,7 @@ public class Item {
 
     @Override
     public String toString() {
-        return "Item [name = " + name + ", price = " + price + " ]";
+        return "Item [ name = " + name + ", price = " + price + " ]";
     }
 
     @Override

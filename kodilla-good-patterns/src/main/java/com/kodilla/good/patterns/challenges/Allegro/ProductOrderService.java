@@ -13,11 +13,12 @@ public class ProductOrderService {
     }
 
     public OrderDto process(final OrderRequest orderRequest) {
-        boolean isOrdered = orderService.order(orderRequest.getUser(), orderRequest.getOrderDate());
+        Stock stock = new Stock();
+        boolean isOrdered = orderService.order(orderRequest.getItem(), orderRequest.getUser());
 
         if (isOrdered) {
-            informationService.inform(orderRequest.getUser());
-            orderRepository.create(orderRequest.getUser(), orderRequest.getOrderDate());
+            informationService.inform(orderRequest.getUser(), orderRequest.getItem());
+            orderRepository.create(orderRequest.getItem(), orderRequest.getUser());
             return new OrderDto(orderRequest.getUser(), true);
         } else {
             return new OrderDto(orderRequest.getUser(), false);

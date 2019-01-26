@@ -1,22 +1,28 @@
 package com.kodilla.good.patterns.challenges.Allegro;
 
-import java.time.LocalDate;
-
 public class OrderRequest {
 
     private User user;
-    private LocalDate orderDate;
+    private Item item;
 
-    public OrderRequest(final User user, final LocalDate orderDate) {
+    public OrderRequest(final User user, final Item item) {
         this.user = user;
-        this.orderDate = orderDate;
+        this.item = item;
     }
 
     public User getUser() {
         return user;
     }
 
-    public LocalDate getOrderDate() {
-        return orderDate;
+    public Item getItem() {
+        return item;
+    }
+
+    @Override
+    public String toString() {
+        return "OrderRequest{" +
+                "user=" + user +
+                ", item=" + item +
+                '}';
     }
 }
