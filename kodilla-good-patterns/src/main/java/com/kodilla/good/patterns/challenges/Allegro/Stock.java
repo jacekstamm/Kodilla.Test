@@ -1,34 +1,25 @@
 package com.kodilla.good.patterns.challenges.Allegro;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
 
 public class Stock {
-
 
     public Stock() {
         stockItemList();
     }
 
-    public Map stockItemList() {
+    public ArrayList<Item> stockItemList() {
 
-        ReferenceNumberRandom referenceNumberRandom = new ReferenceNumberRandom();
-
-        Map<Long, Item> stockItemMap = new HashMap<>();
-        stockItemMap.put(referenceNumberRandom.referenceNumberGenerator(), new Item("Apple", 1.98));
-        stockItemMap.put(referenceNumberRandom.referenceNumberGenerator(), new Item("iPhone SE", 3999.98));
-        stockItemMap.put(referenceNumberRandom.referenceNumberGenerator(), new Item("Pants", 219.99));
-        stockItemMap.put(referenceNumberRandom.referenceNumberGenerator(), new Item("AirPods", 399.99));
-        stockItemMap.put(referenceNumberRandom.referenceNumberGenerator(), new Item("Apple Watch", 1899.98));
-        stockItemMap.put(referenceNumberRandom.referenceNumberGenerator(), new Item("Pencil", 0.97));
-        stockItemMap.put(referenceNumberRandom.referenceNumberGenerator(), new Item("Coca-Cola", 3.19));
-        stockItemMap.put(referenceNumberRandom.referenceNumberGenerator(), new Item("Pepsi", 3.29));
-        stockItemMap.put(referenceNumberRandom.referenceNumberGenerator(), new Item("Snowboard", 799.99));
-
-        System.out.println("Full Item List:");
-        stockItemMap.entrySet().stream()
-                .map(n -> " <> " + n + " <> ")
-                .forEach(System.out::println);
+        ArrayList<Item> stockItemMap = new ArrayList<>();
+        stockItemMap.add(new Item("Apple", 1.98));
+        stockItemMap.add( new Item("iPhone SE", 3999.98));
+        stockItemMap.add(new Item("Pants", 219.99));
+        stockItemMap.add(new Item("AirPods", 399.99));
+        stockItemMap.add(new Item("Apple Watch", 1899.98));
+        stockItemMap.add(new Item("Pencil", 0.97));
+        stockItemMap.add(new Item("Coca-Cola", 3.19));
+        stockItemMap.add(new Item("Pepsi", 3.29));
+        stockItemMap.add(new Item("Snowboard", 799.99));
 
         return stockItemMap;
     }

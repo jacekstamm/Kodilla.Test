@@ -12,7 +12,7 @@ public class User {
 
     @Override
     public String toString() {
-        return "Customer " + name + " " + surname;
+        return name + " " + surname;
     }
 
     public String getName() {
