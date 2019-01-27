@@ -20,9 +20,6 @@ public class OrderRequest {
 
     @Override
     public String toString() {
-        return "OrderRequest{" +
-                "user=" + user +
-                ", item=" + item +
-                '}';
+        return "Order Request! " + user + " " + item;
     }
 }

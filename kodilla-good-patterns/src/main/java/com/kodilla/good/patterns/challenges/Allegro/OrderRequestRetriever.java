@@ -5,7 +5,7 @@ public class OrderRequestRetriever {
     public OrderRequest retrieve() {
 
         User userJacekStamm = new User("Jacek", "Stamm");
-        Item item = new Item("iPhone", 268.95);
+        Item item = new Item("iPhone SE", 3999.98);
 
         return new OrderRequest(userJacekStamm, item);
     }

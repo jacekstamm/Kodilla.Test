@@ -13,8 +13,8 @@ public class ProductOrderService {
     }
 
     public OrderDto process(final OrderRequest orderRequest) {
-        Stock stock = new Stock();
-        boolean isOrdered = orderService.order(orderRequest.getItem(), orderRequest.getUser());
+        IsAvailableInStock isAvailableInStock = new IsAvailableInStock();
+        boolean isOrdered = isAvailableInStock.avaibleInStock(orderRequest.getItem());
 
         if (isOrdered) {
             informationService.inform(orderRequest.getUser(), orderRequest.getItem());

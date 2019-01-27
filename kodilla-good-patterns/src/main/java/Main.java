@@ -9,14 +9,5 @@ public class Main {
 
         ProductOrderService productOrderService = new ProductOrderService(new MailService(), new OrderItemsService(), new OrderItemsRepository());
         productOrderService.process(orderRequest);
-
-        System.out.println(orderRequest);
-
-
-
-
-
-
-
     }
 }
