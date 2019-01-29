@@ -2,5 +2,5 @@ package com.kodilla.good.patterns.challenges.Food2Door;
 
 public interface Shop {
 
-    void process();
+    boolean process(Product product);
 }

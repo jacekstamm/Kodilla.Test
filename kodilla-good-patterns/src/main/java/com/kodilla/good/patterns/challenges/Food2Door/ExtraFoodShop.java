@@ -1,21 +1,32 @@
 package com.kodilla.good.patterns.challenges.Food2Door;
 
-import java.util.ArrayList;
+public class ExtraFoodShop implements Shop {
 
-public class ExtraFoodShop{
+    private ExtraFoodStock extraFoodStock = new ExtraFoodStock();
 
-    private ArrayList<Product> extraFoodShopProductList = new ArrayList<>();
-
-    public ExtraFoodShop() {
-        productListEFS();
+    private boolean isAvailable(Product product){
+        return extraFoodStock.stockEF().contains(product);
     }
 
-    public ArrayList<Product> productListEFS() {
-        extraFoodShopProductList.add(0, new Product("Wafle Kukurydziane", 250));
-        extraFoodShopProductList.add(1, new Product("Wafle ryżowe", 100));
-        extraFoodShopProductList.add(2, new Product("Orzechy nerkowca", 25));
-        extraFoodShopProductList.add(3, new Product("Orzechy włoskie", 29));
+    private int differenceQuantity(Product product) {
+        int index = extraFoodStock.stockEF().indexOf(product);
+        return extraFoodStock.stockEF().get(index).getQuantity() - product.getQuantity();
+    }
 
-        return extraFoodShopProductList;
+    @Override
+    public boolean process(Product product) {
+        int index = extraFoodStock.stockEF().indexOf(product);
+        for (int x = 0; x < extraFoodStock.stockEF().size(); x++) {
+            if (extraFoodStock.stockEF().get(x).getProductName().equals(product.getProductName())){
+                break;
+            }
+        }
+        if (isAvailable(product) && extraFoodStock.stockEF().get(index).getQuantity() >= product.getQuantity()) {
+            extraFoodStock.stockEF().remove(index);
+            extraFoodStock.stockEF().add(index, new Product(product.getProductName(), differenceQuantity(product)));
+            return true;
+        } else {
+            return false;
+        }
     }
 }

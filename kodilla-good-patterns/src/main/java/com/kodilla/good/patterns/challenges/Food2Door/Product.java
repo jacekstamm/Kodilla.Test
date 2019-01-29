@@ -4,20 +4,25 @@ import java.util.Objects;
 
 public class Product {
 
-    private String name;
+    private String productName;
     private Integer quantity;
 
-    public Product(String name, Integer quantity) {
-        this.name = name;
+    public Product(String productName, Integer quantity) {
+        this.productName = productName;
         this.quantity = quantity;
     }
 
-    public String getName() {
-        return name;
+    public String getProductName() {
+        return productName;
     }
 
     public Integer getQuantity() {
         return quantity;
+    }
+
+    public Integer setQuantity(Integer quantity) {
+        this.quantity = quantity;
+        return getQuantity();
     }
 
     @Override
@@ -25,12 +30,12 @@ public class Product {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Product product = (Product) o;
-        return Objects.equals(name, product.name) &&
+        return Objects.equals(productName, product.productName) &&
                 Objects.equals(quantity, product.quantity);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, quantity);
+        return Objects.hash(productName, quantity);
     }
 }
