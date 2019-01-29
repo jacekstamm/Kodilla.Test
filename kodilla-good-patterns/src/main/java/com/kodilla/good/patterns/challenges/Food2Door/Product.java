@@ -5,20 +5,19 @@ import java.util.Objects;
 public class Product {
 
     private String name;
-    private Integer price;
+    private Integer quantity;
 
-
-    public Product(String name, Integer price) {
+    public Product(String name, Integer quantity) {
         this.name = name;
-        this.price = price;
+        this.quantity = quantity;
     }
 
     public String getName() {
         return name;
     }
 
-    public Integer getPrice() {
-        return price;
+    public Integer getQuantity() {
+        return quantity;
     }
 
     @Override
@@ -27,11 +26,11 @@ public class Product {
         if (o == null || getClass() != o.getClass()) return false;
         Product product = (Product) o;
         return Objects.equals(name, product.name) &&
-                Objects.equals(price, product.price);
+                Objects.equals(quantity, product.quantity);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, price);
+        return Objects.hash(name, quantity);
     }
 }
