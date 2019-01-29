@@ -15,8 +15,11 @@
 *.iws
 *.iml
 *.ipr
+kodilla-exception/out/
+kodilla-stream/out/
 kodilla-testing/out/
-/build/
+kodilla-exception/build.gradle
+
 
 
 ### NetBeans ###

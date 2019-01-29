@@ -1,7 +1,6 @@
 package com.kodilla.good.patterns.challenges.Allegro;
 
 import java.util.ArrayList;
-import java.util.Map;
 
 public class IsAvailableInStock {
 
