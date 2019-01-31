@@ -1,20 +1,31 @@
 package com.kodilla.good.patterns.challenges.Food2Door;
 
-import java.util.ArrayList;
+public class HealthyShop implements Shop {
 
-public class HealthyShop{
+    private HealthyStock healthyStock = new HealthyStock();
+    private int index;
+    public int differenceQuantity;
 
-    private ArrayList<Product> healthyShopProductList = new ArrayList<>();
-
-    public HealthyShop() {
-        productListHS();
-    }
-
-    public ArrayList<Product> productListHS() {
-        healthyShopProductList.add(0, new Product("Spirulina", 257));
-        healthyShopProductList.add(1, new Product("Olej kokosowy", 25));
-        healthyShopProductList.add(2, new Product("Makaron gryczany", 68));
-
-        return healthyShopProductList;
+    @Override
+    public boolean process(Product product) {
+        boolean isOrNot = false;
+        for (int x = 0; x < healthyStock.stockHS().size(); x++) {
+            if (healthyStock.stockHS().get(x).getProductName().equals(product.getProductName())){
+                isOrNot = true;
+                index = x;
+                break;
+            }
+        }
+        if (isOrNot && healthyStock.stockHS().get(index).getQuantity() >= product.getQuantity()) {
+            differenceQuantity = healthyStock.stockHS().get(index).getQuantity() - product.getQuantity();
+            String productName = healthyStock.stockHS().get(index).getProductName();
+            healthyStock.stockHS().remove(index);
+            healthyStock.stockHS().add(index, new Product(productName, differenceQuantity));
+            System.out.println("Order is accepted.");
+            return true;
+        } else {
+            System.out.println("Order false.");
+            return false;
+        }
     }
 }

@@ -6,7 +6,6 @@ public class Order {
     private Product product;
     private String producer;
 
-
     public Order(Customer customer, Product product, String producer) {
         this.customer = customer;
         this.product = product;
