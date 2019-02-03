@@ -1,6 +1,5 @@
 package com.kodilla.good.patterns.challenges.FlightFinder;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class FlightFinderMain {
@@ -28,8 +27,6 @@ public class FlightFinderMain {
 
         System.out.println("\n" + "Order for " + zosiaSamosia + ". Connecting flights from: " + zosiaSamosiaOrder.getDepartureCity() + " to: " + zosiaSamosiaOrder.getArrivalCity() + " are through: ");
         SearchConnectionFlight searchConnectionFlight = new SearchConnectionFlight();
-
-
-
+        searchConnectionFlight.connectionFlightProcess(allFlightsMap, zosiaSamosiaOrder);
     }
 }
