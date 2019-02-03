@@ -25,8 +25,8 @@ public class FlightFinderMain {
         SearchFlightTo searchFlightTo = new SearchFlightTo();
         searchFlightTo.ToFlightProcess(allFlightsMap, janKowalskiOrder);
 
-        System.out.println("\n" + "Order for " + zosiaSamosia + ". Connecting flights from: " + zosiaSamosiaOrder.getDepartureCity() + " to: " + zosiaSamosiaOrder.getArrivalCity() + " are through: ");
+        System.out.println("\n" + "Order for " + zosiaSamosia + ". Connecting flights from: " + zosiaSamosiaOrder.getDepartureCity() + " to: " + zosiaSamosiaOrder.getArrivalCity());
         SearchConnectionFlight searchConnectionFlight = new SearchConnectionFlight();
-        searchConnectionFlight.connectionFlightProcess(allFlightsMap, zosiaSamosiaOrder);
+        searchConnectionFlight.connectionFlightProcess(allFlightsMap, zosiaSamosiaOrder, "Barcelona");
     }
 }

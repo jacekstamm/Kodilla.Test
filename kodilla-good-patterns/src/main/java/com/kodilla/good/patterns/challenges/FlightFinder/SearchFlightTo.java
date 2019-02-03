@@ -9,7 +9,6 @@ public class SearchFlightTo {
         flightMap.entrySet().stream()
                 .map(Map.Entry::getValue)
                 .filter(e -> e.getArrivalCity().equals(flightOrder.getArrivalCity()))
-                .map(Flight::getDepartureCity)
                 .forEach(System.out::println);
     }
 }

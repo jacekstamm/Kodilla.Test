@@ -33,4 +33,9 @@ public class Flight {
     public int hashCode() {
         return Objects.hash(departureCity, arrivalCity);
     }
+
+    @Override
+    public String toString() {
+        return departureCity + " - " + arrivalCity;
+    }
 }
