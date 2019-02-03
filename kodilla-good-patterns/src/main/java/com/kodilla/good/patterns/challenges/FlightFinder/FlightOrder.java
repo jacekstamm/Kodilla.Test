@@ -2,14 +2,20 @@ package com.kodilla.good.patterns.challenges.FlightFinder;
 
 public class FlightOrder {
 
+    private final Customer customer;
     private final String departureCity;
     private final String arrivalCity;
-    private final Customer customer;
 
-    public FlightOrder(String departureCity, String arrivalCity, Customer customer) {
+
+    public FlightOrder(Customer customer, String departureCity, String arrivalCity) {
+        this.customer = customer;
         this.departureCity = departureCity;
         this.arrivalCity = arrivalCity;
-        this.customer = customer;
+
+    }
+
+    public Customer getCustomer() {
+        return customer;
     }
 
     public String getDepartureCity() {
@@ -20,7 +26,5 @@ public class FlightOrder {
         return arrivalCity;
     }
 
-    public Customer getCustomer() {
-        return customer;
-    }
+
 }
