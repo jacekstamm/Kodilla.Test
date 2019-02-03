@@ -11,7 +11,7 @@ public class OrderRetriever {
     }
 
     public Order orderFromExtraFoodShop() {
-        Product product = new Product("Wafle kukurydziane", 260);
+        Product product = new Product("Wafle kukurydziane", 29);
         String producer = "Extra Food Shop";
         return new Order(customerList.customerListF2D().get(1), product, producer);
     }
