@@ -10,7 +10,18 @@ public class SearchConnectionFlight {
                 .map(Map.Entry::getValue)
                 .filter(e -> flightOrder.getDepartureCity().equals(e.getDepartureCity()) || flightOrder.getArrivalCity().equals(e.getArrivalCity()))
                 .filter(e -> !e.getDepartureCity().equals(flightOrder.getDepartureCity()))
-                .map(Flight::getDepartureCity)
                 .forEach(System.out::println);
+
+        System.out.println();
+
+        for (Map.Entry<Integer, Flight> integerFlightEntry : flightMap.entrySet()) {
+            Flight e = integerFlightEntry.getValue();
+            if (flightOrder.getDepartureCity().equals(e.getDepartureCity()) || flightOrder.getArrivalCity().equals(e.getArrivalCity())) {
+                if (!e.getDepartureCity().equals(flightOrder.getDepartureCity())) {
+                    String departureCity = e.getDepartureCity();
+                    System.out.println(departureCity);
+                }
+            }
+        }
     }
 }
