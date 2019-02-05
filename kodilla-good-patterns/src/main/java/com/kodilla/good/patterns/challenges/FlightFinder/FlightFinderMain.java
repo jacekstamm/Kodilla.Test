@@ -17,16 +17,16 @@ public class FlightFinderMain {
         FlightMap flightMap = new FlightMap();
         HashMap<Integer, Flight> allFlightsMap = flightMap.listOfAllFlights();
 
-        System.out.println("Order for " + jacekStamm + ". All flights FROM " + jacekStammOrder.getDepartureCity() + ": ");
-        SearchFlightFrom searchFlightFrom = new SearchFlightFrom();
-        searchFlightFrom.FromFlightProcess(allFlightsMap, jacekStammOrder);
+        //System.out.println("Order for " + jacekStamm + ". All flights FROM " + jacekStammOrder.getDepartureCity() + ": ");
+        //SearchFlightFrom searchFlightFrom = new SearchFlightFrom();
+        //searchFlightFrom.FromFlightProcess(allFlightsMap, jacekStammOrder);
 
-        System.out.println("\n" + "Order for " + janKowalski + ". All flights TO " + janKowalskiOrder.getArrivalCity() + " are from:");
-        SearchFlightTo searchFlightTo = new SearchFlightTo();
-        searchFlightTo.ToFlightProcess(allFlightsMap, janKowalskiOrder);
+        //System.out.println("\n" + "Order for " + janKowalski + ". All flights TO " + janKowalskiOrder.getArrivalCity() + " are from:");
+        //SearchFlightTo searchFlightTo = new SearchFlightTo();
+        //searchFlightTo.ToFlightProcess(allFlightsMap, janKowalskiOrder);
 
         System.out.println("\n" + "Order for " + zosiaSamosia + ". Connecting flights from: " + zosiaSamosiaOrder.getDepartureCity() + " to: " + zosiaSamosiaOrder.getArrivalCity());
         SearchConnectionFlight searchConnectionFlight = new SearchConnectionFlight();
-        searchConnectionFlight.connectionFlightProcess(allFlightsMap, zosiaSamosiaOrder, "Barcelona");
+        searchConnectionFlight.connectionFlightProcess(allFlightsMap, zosiaSamosiaOrder);
     }
 }

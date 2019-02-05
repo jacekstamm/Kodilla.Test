@@ -8,8 +8,8 @@ public class FlightMap {
         HashMap<Integer, Flight> listOfFlights = new HashMap<>();
         listOfFlights.put(0, new Flight("London", "Manchester"));
         listOfFlights.put(1, new Flight("Beijing", "Shanghai"));
-        listOfFlights.put(2, new Flight("Warsaw", "Dublin"));
-        listOfFlights.put(3, new Flight("London", "Warsaw"));
+        listOfFlights.put(2, new Flight("London", "Warsaw"));
+        listOfFlights.put(3, new Flight("Warsaw", "Dublin"));
         listOfFlights.put(4, new Flight("Beijing", "Dubai"));
         listOfFlights.put(5, new Flight("London", "Barcelona"));
         listOfFlights.put(6, new Flight("Warsaw", "Beijing"));
