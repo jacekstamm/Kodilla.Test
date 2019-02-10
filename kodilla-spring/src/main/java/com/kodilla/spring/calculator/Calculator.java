@@ -7,10 +7,7 @@ import org.springframework.stereotype.Component;
 public class Calculator {
 
     @Autowired
-    private Display display;
-
-    private double a;
-    private double b;
+    public Display display;
 
     public double add(double a, double b) {
         display.displayValue(a + b);
@@ -34,5 +31,4 @@ public class Calculator {
         }
         return 0;
     }
-
 }
