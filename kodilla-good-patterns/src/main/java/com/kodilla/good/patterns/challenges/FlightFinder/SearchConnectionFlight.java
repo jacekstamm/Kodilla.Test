@@ -7,8 +7,8 @@ import java.util.Map;
 
 public class SearchConnectionFlight {
 
-    List<String> cities = new ArrayList<>();
-    SearchFlightTo searchFlightTo = new SearchFlightTo();
+    private final List<String> cities = new ArrayList<>();
+    private final SearchFlightTo searchFlightTo = new SearchFlightTo();
 
     public List<String> connectionFlightProcess(HashMap<Integer, Flight> flightMap, FlightOrder flightOrder) {
 

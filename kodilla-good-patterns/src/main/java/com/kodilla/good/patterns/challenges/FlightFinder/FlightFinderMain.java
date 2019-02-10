@@ -13,7 +13,7 @@ public class FlightFinderMain {
 
         FlightOrder jacekStammOrder = new FlightOrder(jacekStamm, "Beijing", "");
         FlightOrder janKowalskiOrder = new FlightOrder(janKowalski, "", "Warsaw");
-        FlightOrder zosiaSamosiaOrder = new FlightOrder(zosiaSamosia, "London", "Dublin");
+        FlightOrder zosiaSamosiaOrder = new FlightOrder(zosiaSamosia, "Beijing", "Warsaw");
 
         FlightMap flightMap = new FlightMap();
         HashMap<Integer, Flight> allFlightsMap = flightMap.listOfAllFlights();
